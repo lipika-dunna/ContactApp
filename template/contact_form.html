@@ -1,0 +1,30 @@
+<div ng-controller="addContactCtrl">
+     <div class="list-group-item">
+         <div class="form-group">
+            <p><label for="name">Name: </label> <input id="name" class="form-control" type="text" ng-model="currentContact.name"> </p>
+            <p><label for="email">Email:</label> <input id="email" class="form-control" type="text" ng-model="currentContact.email"> </p>
+            <p><label for="phone">Phone:</label> <input id="phone" class="form-control" type="number" ng-model="currentContact.phone"> </p>
+            <p><label for="city">City:</label> <input id="city" class="form-control" type="text" ng-model="currentContact.city"> </p>
+          </div>
+        
+          <a ng-if="path === '/Add' " ng-href="/contact-info/{{ contacts.length - 1 }}" ng-click="addContact()">
+            <button class="btn btn-default">
+             <span class="glyphicon glyphicon-ok"></span>
+             <span> Add</span>
+            </button>
+          </a>
+
+          <a ng-if="path !== '/Add'" ng-href="/contact-info/{{index}}">
+            <button class="btn btn-default">
+             <span class="glyphicon glyphicon-ok"></span>
+             <span> Save Edits</span>
+            </button>
+          </a>
+
+          <a href="/">
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-remove"></span><span>Cancel</span>
+            </button>
+          </a>
+        </div>
+      </div>
